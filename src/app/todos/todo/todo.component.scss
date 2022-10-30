@@ -1,0 +1,63 @@
+$color-primary:rgb(122, 131, 148);
+
+.todo-wrapper {
+    display: flex;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+.todo-checkbox {
+    display: none;
+}
+.todo-text {
+    flex: 1 1;
+    padding: 0 10px;
+    font-size: 20px;
+}
+.todo-btn {
+    border: none;
+    background-color: $color-primary;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    &:hover{
+        background-color: red;
+    }
+}
+
+.todo-checkbox-label{
+    width: 15px;
+    height: 15px;
+    border: $color-primary solid 2px;
+    border-radius: 4px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+
+}
+.checkbox-indicator::after, .checkbox-indicator::before{
+    content: '';
+    width: 10px;
+    height: 2px;
+    background-color: $color-primary;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    transform: rotate(304deg);
+    display: none;
+}
+.checkbox-indicator::before{
+    width: 7px;
+    top: 8px;
+    left: 2px;
+    transform: rotate(221deg);
+    display: none;
+}
+
+.todo-checkbox-label>.todo-checkbox:checked+.checkbox-indicator::after  {
+    display: block;
+}
+
+.todo-checkbox-label>.todo-checkbox:checked+.checkbox-indicator::before{
+    display: block;
+}

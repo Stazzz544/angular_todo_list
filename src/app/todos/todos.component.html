@@ -1,0 +1,14 @@
+<app-todo-form 
+    (onAddTodo)="addTodo($event)" >
+</app-todo-form>
+
+<app-error [errorText]="errorText"></app-error>
+
+<app-todo 
+    (onDelTodo)="delTodo($event)" 
+    (onCheckTodo)="checkTodo($event)"
+    *ngFor="let todo of todos" 
+    [todo]="todo">
+</app-todo>
+
+<div class="no-todos" *ngIf="todos.length === 0">no todos...</div>

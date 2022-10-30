@@ -1,0 +1,8 @@
+<div class="todo-wrapper">
+    <label class="todo-checkbox-label">
+        <input class="todo-checkbox" [checked]="todo.checked" (click)="checkTodo(todo.id)" type="checkbox" />
+        <span class="checkbox-indicator"></span>
+    </label>
+    <span class="todo-text">{{todo.text}}</span>
+    <button class="todo-btn" (click)="delTodo(todo.id)">del</button>
+</div>
